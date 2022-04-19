@@ -11,7 +11,7 @@ import SwiftUI
 struct CBLApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Pag1()
         }
     }
 }
