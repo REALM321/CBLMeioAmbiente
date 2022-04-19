@@ -91,3 +91,69 @@ struct Pag2_Previews: PreviewProvider {
     }
 }
 
+//Página3
+
+
+import SwiftUI
+struct Pag3: View {
+    @State var Usuario: String = ""
+    @State var Senha: String = ""
+    @State var Email: String = ""
+    @State var Telefone: String = ""
+    @State var Cidade: String = ""
+
+
+    var body: some View {
+        HStack {
+                VStack {
+                    Divider()
+                    Spacer()
+                    VStack{
+                        HStack{
+                        Image(systemName:"person.circle")
+                                .foregroundColor(.green)
+                                .font(.system(size: 150))
+                                Divider()
+                        }
+                    TextField("Usuario", text:$Usuario)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                    TextField("Senha", text:$Senha)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                    TextField("Email", text:$Email)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                    TextField("Telefone", text:$Telefone)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                    TextField("Cidade", text:$Cidade)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                    
+                        Button(action: {
+                            
+                        }, label: {
+                        Text("Registrar")
+                        })
+                        .font(.title3)
+                        .cornerRadius(5)
+                        .foregroundColor(.green)
+                        .padding(20)
+                        
+                }
+            }
+                .background(.black)
+        }
+    }
+struct Pag3_Previews: PreviewProvider {
+    static var previews: some View {
+        Pag3()
+        }
+    }
+}
