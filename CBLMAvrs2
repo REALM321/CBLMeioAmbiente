@@ -40,3 +40,54 @@ struct Pag1_Previews: PreviewProvider {
         Pag1()
     }
 }
+
+//Página2
+
+import SwiftUI  
+struct Pag2: View {
+    @State var Usuario: String = ""
+    @State var Senha: String = ""
+
+    var body: some View {
+        HStack {
+                VStack {
+                    Divider()
+                    Spacer()
+                    HStack{
+                    Image(systemName:"person.circle")
+                            .foregroundColor(.green)
+                            .font(.system(size: 150))
+                    Divider()
+                    }
+                    
+                    VStack{
+                    TextField("Usuario", text:$Usuario)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                        Divider()
+                    TextField("Senha",text:$Senha)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                    }
+                    ZStack{
+                        Button("Login") {
+                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        }
+                        .font(.title3)
+                        .cornerRadius(5)
+                        .foregroundColor(.green)
+                        .padding(20)
+                        
+                    }
+                } .background(.black)
+            }
+        }
+    }
+struct Pag2_Previews: PreviewProvider {
+    static var previews: some View {
+        Pag2()
+    }
+}
+
