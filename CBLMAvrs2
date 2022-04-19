@@ -1,1 +1,42 @@
+import SwiftUI
 
+//Página1
+
+struct Pag1: View {
+    var body: some View {
+        NavigationView{
+            VStack{
+                VStack(spacing: -10) {
+                    Text("Seja bem-vindo!")
+                        .padding()
+                        .foregroundColor(.green)
+                        .font(.largeTitle)
+                    Image(systemName: "leaf.fill")
+                        .foregroundColor(.green)
+                        .font(.system(size: 90))
+                }
+                .padding(50)
+                Spacer()
+                    .frame(height: 300)
+                HStack{
+                    //                    Fazer um botão aqui indo para a segunda página (Pag2)
+                    NavigationLink("Fazer login") {
+                        Pag2()
+                    }
+                    Divider()
+                        .frame(height: 50)
+                    NavigationLink("Registrar") {
+                        Pag3()
+                    }
+                }
+                Spacer()
+                    .frame(width: 375 ,height: 100)
+            } .background(.black)
+        }
+    }
+}
+struct Pag1_Previews: PreviewProvider {
+    static var previews: some View {
+        Pag1()
+    }
+}
