@@ -1,1 +1,319 @@
+//Pagina 1
+import SwiftUI
+struct Pag1: View {
+    var body: some View {
+        NavigationView{
+            VStack{
+                VStack(spacing: -10) {
+                    Text("Seja bem-vindo!")
+                        .padding()
+                        .foregroundColor(.green)
+                        .font(.largeTitle)
+                        
+                    Image(systemName: "leaf.fill")
+                        .foregroundColor(.green)
+                        .font(.system(size: 90))
+                }
+                .padding(50)
+                Spacer()
+                    .frame(height: 300)
+                HStack{
+                    NavigationLink(
+                        destination:
+                            {Pag2()},
+                        label:{
+                            Text("Fazer login")
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(.green)
+                                .clipShape(Rectangle())
+                        }
+                        )
+                    Divider()
+                        .frame(height: 50)
+                    NavigationLink(
+                        destination:
+                            {Pag3()},
+                        label:{
+                            Text("Fazer registro")
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(.green)
+                                .clipShape(Rectangle())
+                            }
+                    )
+                    
+                }
+                HStack{
+                Divider()
+                    
+                    NavigationLink(
+                        destination:
+                            {Pag1_2()},
+                        label:{
+                            Text("Sobre nós")
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(.green)
+                                .clipShape(Rectangle())
+                            }
+                        )
+                }
+                Spacer()
+                    .frame(width: 390 ,height: 150)
+            } .background(.black)
+        }
+    }
+}
+struct Pag1_Previews: PreviewProvider {
+    static var previews: some View {
+        Pag1()
+    }
+}
+
+// Pagina 1_2
+import SwiftUI
+
+struct Pag1_2: View {
+    var body: some View {
+        VStack{
+            VStack{
+                Text("Quem somos?")
+                    .foregroundColor(.green)
+            }
+            Spacer()
+                .frame(width: 400, height: 650)
+        } .background(.black)
+    }
+}
+
+struct Pag1_2_Previews: PreviewProvider {
+    static var previews: some View {
+        Pag1_2()
+    }
+}
+// Pagina 3
+import Foundation
+import SwiftUI
+struct Pag3: View {
+    @State var Usuario: String = ""
+    @State var Senha: String = ""
+    @State var Email: String = ""
+    @State var Telefone: String = ""
+    @State var Cidade: String = ""
+
+
+    var body: some View {
+        HStack {
+                VStack {
+                    Divider()
+                    Spacer()
+                    VStack{
+                        HStack{
+                        Image(systemName:"person.circle")
+                                .foregroundColor(.green)
+                                .font(.system(size: 150))
+                                Divider()
+                        }
+                    TextField("Nome de usuario", text:$Usuario)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                    SecureField("Senha", text:$Senha)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                    TextField("Email: exemple@exemple.com", text:$Email)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                            .keyboardType(.emailAddress)
+                    TextField("Telefone: +00 (00) 00000-0000", text:$Telefone)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                            .keyboardType(.numberPad)
+                    TextField("Cidade: Ex.: Berlim", text:$Cidade)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(2)
+                        
+                    NavigationLink(
+                            destination:
+                                {Pag4()},
+                            label:{
+                                Text("Fazer registro")
+                                    .padding()
+                                    .foregroundColor(.black)
+                                    .background(.green)
+                                    .clipShape(Rectangle())
+                    }
+                )
+            }
+        }
+        .background(.black)
+    }
+}
+struct Pag3_Previews: PreviewProvider {
+    static var previews: some View {
+        Pag3()
+        }
+    }
+}
+
+//Pagina 4
+
+import SwiftUI
+
+struct Pag4: View {
+    var body: some View {
+    NavigationView{
+        VStack{
+            VStack{
+                Text("Ir Para")
+                .padding()
+                .foregroundColor(.green)
+                .font(.largeTitle)
+            }
+                .padding()
+                Spacer()
+                    .frame(height: 400)
+            HStack{
+                NavigationLink(
+                    destination:
+                        {Pag1()},
+                    label:{
+                        Text("Notícias")
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(.green)
+                            .clipShape(Rectangle())
+                    }
+                    )
+                Divider()
+                NavigationLink(
+                    destination:
+                        {Pag5()},
+                    label:{
+                        Text("Fazer denúncia")
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(.green)
+                            .clipShape(Rectangle())
+                    }
+                )
+                }
+            Spacer()
+                .frame(width: 390 ,height: 150)
+            } .background(.black)
+        }
+    }
+}
+struct Pag4_Previews: PreviewProvider {
+    static var previews: some View {
+        Pag4()
+    }
+}
+
+//Pagina 5
+
+import SwiftUI
+
+struct Pag5: View {
+    @State var Usuario: String = ""
+    @State var Senha: String = ""
+
+    var body: some View {
+        HStack {
+                VStack {
+                    Divider()
+                    Spacer()
+                    HStack{
+                    Image(systemName:"exclamationmark.bubble.circle.fill")
+                            .foregroundColor(.green)
+                            .font(.system(size: 150))
+                    Divider()
+                    }
+                    
+                    VStack{
+                    TextField("Digite aqui sua denuncia", text:$Usuario)
+                            .padding()
+                            .background(.green)
+                            .cornerRadius(20)
+                        Divider()
+                    }
+                    ZStack{
+                        NavigationLink(
+                            destination:
+                                {Pag4()},
+                            label:{
+                        
+                                
+                                Image(systemName:"envelope")
+                                        .foregroundColor(.green)
+                                        .font(.system(size: 70))
+                            }
+                            )
+            }
+        } .background(.black)
+    }
+}
+
+struct Pag5_Previews: PreviewProvider {
+    static var previews: some View {
+        Pag5()
+    }
+}
+}
+
+//Pagina 6
+
+import SwiftUI
+
+struct Pag6: View {
+    @State var Usuario: String = ""
+    @State var Senha: String = ""
+
+    var body: some View {
+        HStack {
+                VStack {
+                    Divider()
+                    Spacer()
+                    HStack{
+                    Image(systemName:"checkmark.seal")
+                            .foregroundColor(.green)
+                            .font(.system(size: 150))
+                    Divider()
+                    }
+                    
+                    
+                    
+                    VStack{
+                  
+                        Divider()
+                    }
+                    ZStack{
+                        NavigationLink(
+                            destination:
+                                {Pag4()},
+                            label:{
+                        
+                                
+                                Image(systemName:"envelope")
+                                        .foregroundColor(.green)
+                                        .font(.system(size: 70))
+                            }
+                            )
+            }
+        } .background(.black)
+    }
+}
+
+
+struct Pag6_Previews: PreviewProvider {
+    static var previews: some View {
+        Pag6()
+    }
+}
+    }
 
